@@ -10,6 +10,7 @@ export class SearchSiteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
