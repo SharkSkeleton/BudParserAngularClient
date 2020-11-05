@@ -1,0 +1,21 @@
+/*.myLbl {*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*  margin-bottom: 5px;*/
+/*  text-align: center;*/
+/*  border-style: solid;*/
+/*  border-color: black;*/
+/*}*/
+.search-card {
+  margin: 5px;
+  max-width: 100%;
+}
+
+.header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.txtFld {
+  width: 25%;
+}
