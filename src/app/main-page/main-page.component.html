@@ -1,2 +1,2 @@
-<app-search-site></app-search-site>
-<app-filter></app-filter>
+<app-search-site (messageEvent)="changeFlag($event)"></app-search-site>
+<app-filter *ngIf="myBool"></app-filter>
