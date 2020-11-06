@@ -19,7 +19,7 @@
         </mat-chip>
         <input
           placeholder="New filter elements..."
-          #fruitInput
+          #elementInput
           [formControl]="filterCtrl"
           [matAutocomplete]="auto"
           [matChipInputFor]="chipList"
@@ -35,6 +35,6 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-button>FILTER</button>
+    <button mat-button (click)="btnClick()">GO TO RESULTS</button>
   </mat-card-actions>
 </mat-card>

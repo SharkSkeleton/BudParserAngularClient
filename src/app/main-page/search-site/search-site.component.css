@@ -16,6 +16,7 @@
   background-size: cover;
 }
 
-.txtFld {
+.txtFld1, .txtFld2, .txtFld3 {
   width: 25%;
+  margin: 5px;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  myBool = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public changeFlag($event): void {
+    this.myBool = !this.myBool;
   }
 
 }

@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {MatAutocomplete, MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {map, startWith} from 'rxjs/operators';
 import {MatChipInputEvent} from '@angular/material/chips';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -18,13 +19,13 @@ export class FilterComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   filterCtrl = new FormControl();
   filteredElements: Observable<string[]>;
-  defElements: string[] = ['Filter element 0'];
+  defElements: string[] = ['No.', 'Name', 'Weight', 'Symbol'];
   allElements: string[] = ['Filter element 1', 'Filter element 2', 'Filter element 3', 'Filter element 4', 'Filter element 5'];
 
   @ViewChild('fruitInput') filterInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  constructor() {
+  constructor(private router: Router) {
     this.filteredElements = this.filterCtrl.valueChanges.pipe(
       startWith(null),
       map((fruit: string | null) => fruit ? this._filter(fruit) : this.allElements.slice()));
@@ -67,5 +68,9 @@ export class FilterComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.allElements.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  btnClick(): void {
+    this.router.navigateByUrl('result');
   }
 }
